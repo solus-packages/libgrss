@@ -1,0 +1,18 @@
+name       : libgrss
+version    : 0.7.0
+release    : 1
+source     :
+    - https://download.gnome.org/sources/libgrss/0.7/libgrss-0.7.0.tar.xz : 6709c0f630a915ea7d5f1ac88ac173ef974d8d7406f43bd4be70d3e71fd554d9
+license    : LGPL-3.0
+component  : programming.library
+summary    : Glib library for feeds
+description: |
+    libgrss is a Glib abstaction to handle feeds in RSS, Atom and other formats.
+builddeps  :
+    - pkgconfig(libsoup-2.4)
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
