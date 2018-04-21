@@ -5,7 +5,7 @@
             <Name>Joshua Strobl</Name>
             <Email>joshua@stroblindustries.com</Email>
         </Packager>
-        <License>LGPL-3.0</License>
+        <License>LGPL-3.0-only</License>
         <PartOf>programming.library</PartOf>
         <Summary xml:lang="en">Glib library for feeds</Summary>
         <Description xml:lang="en">libgrss is a Glib abstaction to handle feeds in RSS, Atom and other formats.
@@ -31,7 +31,7 @@
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="1">libgrss</Dependency>
+            <Dependency release="2">libgrss</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include/</Path>
@@ -50,8 +50,8 @@
         </Files>
     </Package>
     <History>
-        <Update release="1">
-            <Date>2017-10-08</Date>
+        <Update release="2">
+            <Date>2018-04-21</Date>
             <Version>0.7.0</Version>
             <Comment>Packaging update</Comment>
             <Name>Joshua Strobl</Name>
