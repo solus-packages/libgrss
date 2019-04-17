@@ -10,7 +10,7 @@
         <Summary xml:lang="en">Glib library for feeds</Summary>
         <Description xml:lang="en">libgrss is a Glib abstaction to handle feeds in RSS, Atom and other formats.
 </Description>
-        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>libgrss</Name>
@@ -20,7 +20,8 @@
         <PartOf>programming.library</PartOf>
         <Files>
             <Path fileType="library">/usr/lib64/girepository-1.0/Grss-0.7.typelib</Path>
-            <Path fileType="library">/usr/lib64/lib*.so.*</Path>
+            <Path fileType="library">/usr/lib64/libgrss.so.0</Path>
+            <Path fileType="library">/usr/lib64/libgrss.so.0.700.0</Path>
             <Path fileType="data">/usr/share/gir-1.0/Grss-0.7.gir</Path>
         </Files>
     </Package>
@@ -31,12 +32,25 @@
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="2">libgrss</Dependency>
+            <Dependency release="3">libgrss</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="header">/usr/include/</Path>
-            <Path fileType="library">/usr/lib64/lib*.so</Path>
-            <Path fileType="data">/usr/lib64/pkgconfig/*.pc</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-atom-formatter.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-channel.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-enclosure.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-formatter.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-item.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-parser.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feed-rss-formatter.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feeds-group.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feeds-pool.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feeds-publisher.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feeds-store.h</Path>
+            <Path fileType="header">/usr/include/libgrss/feeds-subscriber.h</Path>
+            <Path fileType="header">/usr/include/libgrss/libgrss.h</Path>
+            <Path fileType="header">/usr/include/libgrss/person.h</Path>
+            <Path fileType="library">/usr/lib64/libgrss.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libgrss.pc</Path>
         </Files>
     </Package>
     <Package>
@@ -46,12 +60,60 @@
 </Description>
         <PartOf>programming.docs</PartOf>
         <Files>
-            <Path fileType="doc">/usr/share/gtk-doc/html/</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedAtomHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedPieHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedRssHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedsOpmlGroupHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedsXbelGroupHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/FeedsXoxoGroupHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedAtomFormatter.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedChannel.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedEnclosure.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedFormatter.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedItem.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedParser.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedRssFormatter.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsGroup.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsGroupHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsPool.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsPublisher.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsPubsubhubbubSubscriber.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsRsscloudSubscriber.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsStore.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsSubscriber.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssFeedsSubscriberHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/GrssPerson.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/NSHandler.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/annotation-glossary.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/ch01.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/home.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/index.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/index.sgml</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/ix01.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/ix02.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/ix03.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/left-insensitive.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/left.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-base.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-essentials.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-feed-marshal.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-feeds-subscriber-private.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-useful.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss-utils.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss.devhelp2</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/libgrss.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/license.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/right-insensitive.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/right.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/style.css</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/up-insensitive.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/libgrss/up.png</Path>
         </Files>
     </Package>
     <History>
-        <Update release="2">
-            <Date>2018-04-21</Date>
+        <Update release="3">
+            <Date>2019-04-17</Date>
             <Version>0.7.0</Version>
             <Comment>Packaging update</Comment>
             <Name>Joshua Strobl</Name>
